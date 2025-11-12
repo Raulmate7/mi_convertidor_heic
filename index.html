@@ -31,7 +31,7 @@
             <div class="card-content">
                 <!-- File Upload -->
                 <div class="upload-area" id="uploadArea">
-                    <input type="file" id="fileInput" accept=".heic,.heif,image/heic,image/heif" hidden>
+                    <input type="file" id="fileInput" accept=".heic,.heif,.HEIC,.HEIF,image/heic,image/heif" hidden>
                     <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="17 8 12 3 7 8"></polyline>
@@ -79,7 +79,7 @@
 
                 <!-- Success Message -->
                 <div class="success-message" id="successMessage" style="display: none;">
-                    <p>✓ Conversión completada exitosamente</p>
+                    <p id="successText">✓ Conversión completada exitosamente</p>
                 </div>
 
                 <!-- Error Message -->
@@ -106,7 +106,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <!-- WebAssembly Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/libheif-js@1.15.2/dist/libheif.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
