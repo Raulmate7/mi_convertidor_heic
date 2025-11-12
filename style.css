@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f0f4ff 100%);
+    min-height: 100vh;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-logo {
+    width: 3rem;
+    height: 3rem;
+    color: #4285f4;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4285f4 0%, #7baaf7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #5f6368;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    border: 2px solid #e8eaed;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.card-header {
+    padding: 2rem;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.card-description {
+    color: #5f6368;
+    font-size: 1rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed #dadce0;
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    margin-bottom: 1.5rem;
+}
+
+.upload-area:hover {
+    border-color: #4285f4;
+    background: #f0f7ff;
+}
+
+.upload-area.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.upload-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #4285f4;
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.upload-hint {
+    display: block;
+    font-size: 0.875rem;
+    color: #5f6368;
+}
+
+/* Preview */
+.preview-container {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.preview-box {
+    border-radius: 0.75rem;
+    border: 2px solid #e8eaed;
+    background: #fafbfc;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.preview-box img {
+    max-height: 16rem;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Format Selection */
+.format-selection {
+    margin-bottom: 1.5rem;
+}
+
+.radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.radio-option {
+    border: 2px solid #e8eaed;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.radio-option:hover {
+    background: #f0f7ff;
+}
+
+.radio-option input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: #4285f4;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label {
+    font-weight: 600;
+    color: #4285f4;
+}
+
+.radio-label {
+    font-size: 1rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    height: 3.5rem;
+}
+
+.btn-primary {
+    background: #4285f4;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #dadce0;
+    cursor: not-allowed;
+}
+
+.btn-success {
+    background: #34a853;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #2d8e47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+}
+
+.btn-outline {
+    background: white;
+    color: #1a1a1a;
+    border: 2px solid #dadce0;
+}
+
+.btn-outline:hover {
+    background: #f8f9fa;
+    border-color: #4285f4;
+}
+
+/* Loading */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    color: #4285f4;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid #e8eaed;
+    border-top-color: #4285f4;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Messages */
+.success-message {
+    background: #e6f4ea;
+    border: 2px solid #34a853;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.success-message p {
+    color: #1e8e3e;
+    font-weight: 500;
+}
+
+.error-message {
+    background: #fce8e6;
+    border: 2px solid #ea4335;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.error-message p {
+    color: #c5221f;
+    font-weight: 500;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8eaed;
+}
+
+.info-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+}
+
+.info-card p {
+    font-size: 0.875rem;
+    color: #5f6368;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .radio-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .container {
+        padding: 2rem 1rem;
+    }
+}
