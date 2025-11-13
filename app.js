@@ -144,9 +144,7 @@ async function decodeHeic(arrayBuffer) {
             const decoder = new heifModule.HeifDecoder();
             
             // Decodificar el buffer
-            const data = decoder.decode({
-                data: new Uint8Array(arrayBuffer)
-            });
+            const data = decoder.decode(new Uint8Array(arrayBuffer));
             
             if (!data || data.length === 0) {
                 reject(new Error('No se encontraron imágenes en el archivo HEIC'));
