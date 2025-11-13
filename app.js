@@ -159,16 +159,20 @@ async function decodeHeic(arrayBuffer) {
             canvas.width = image.get_width();
             canvas.height = image.get_height();
             
-            const ctx = canvas.getContext('2d');
-            const imageData = ctx.createImageData(canvas.width, canvas.height);
-            
-            // Obtener datos de píxeles
-            image.display({
-                canvas: canvas,
-                ctx: ctx
-            });
-            
+        const ctx = canvas.getContext('2d');
+
+        // 1. Crear el objeto ImageData vacío
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+
+        // 2. Pedir a libheif que RELLENE el objeto imageData.
+        // Esta función usa un "callback" (la flecha '() => ...') para avisar cuando termina.
+        image.display(imageData, (displayData) => {
+            // 3. Cuando termina, PINTA el imageData relleno en el canvas
+            ctx.putImageData(displayData, 0, 0);
+
+            // 4. AHORA, y solo ahora, resolvemos la promesa con el canvas PINTADO
             resolve(canvas);
+        });
         } catch (error) {
             reject(error);
         }
