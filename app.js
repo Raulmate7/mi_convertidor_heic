@@ -20,15 +20,15 @@ let heifModule = null;
 // Initialize WebAssembly
 async function initializeWasm() {
     try {
-        // Esperar a que libheif esté disponible
-        if (typeof libheif === 'undefined') {
-            console.error('libheif no está disponible');
-            showError('Error al cargar la librería de conversión. Por favor recarga la página.');
-            return;
-        }
-        
-        wasmReady = true;
-        console.log('WebAssembly inicializado correctamente');
+        // 'libheif' es una función que carga el módulo. La llamamos y esperamos.
+        heifModule = await libheif(); 
+        console.log('WebAssembly inicializado y listo.');
+
+        // Habilitamos el área de subida una vez que todo esté listo
+        uploadArea.classList.remove('disabled');
+        uploadText.textContent = 'Seleccionar imagen HEIC';
+        uploadArea.title = ''; // Quitar el título de "cargando"
+
     } catch (error) {
         console.error('Error inicializando WebAssembly:', error);
         showError('Error al inicializar el convertidor. Por favor recarga la página.');
