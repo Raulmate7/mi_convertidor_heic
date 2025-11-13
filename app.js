@@ -15,7 +15,7 @@ const errorText = document.getElementById('errorText');
 // State
 let selectedFile = null;
 let convertedBlob = null;
-let wasmReady = false;
+let heifModule = null;
 
 // Initialize WebAssembly
 async function initializeWasm() {
