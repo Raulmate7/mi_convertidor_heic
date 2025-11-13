@@ -141,7 +141,7 @@ async function decodeHeic(arrayBuffer) {
     return new Promise((resolve, reject) => {
         try {
             // Crear instancia del decodificador
-            const decoder = new libheif.HeifDecoder();
+            const decoder = new heifModule.HeifDecoder();
             
             // Decodificar el buffer
             const data = decoder.decode({
