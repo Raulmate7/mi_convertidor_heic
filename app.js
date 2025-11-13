@@ -90,7 +90,7 @@ async function handleConvert() {
         return;
     }
     
-    if (!wasmReady) {
+    if (!heifModule) {
         showError('El convertidor aún no está listo. Por favor espera un momento.');
         return;
     }
